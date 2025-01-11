@@ -5,11 +5,8 @@ import Footer from './components/Footer';
 import './styles/Reset.scss';
 import './styles/App.scss';
 
-
 const App = () => {
-    const [todos, setTodos] = useState([
-
-    ]);
+    const [todos, setTodos] = useState([]);
 
     const toggleTodo = (id) => {
         setTodos(todos.map(todo =>
@@ -22,14 +19,19 @@ const App = () => {
         setTodos([...todos, newTodo]);
     };
 
+    const activeTodosCount = todos.filter(todo => !todo.completed).length;
+
     return (
         <div className="app">
             <h1>TODO List</h1>
+            <p>Активных задач: {activeTodosCount}</p> {/* Счётчик активных задач */}
             <TodoList todos={todos} toggleTodo={toggleTodo} />
             <AddTodo addTodo={addTodo} />
             <Footer />
         </div>
     );
+
+
 };
 
 export default App;
