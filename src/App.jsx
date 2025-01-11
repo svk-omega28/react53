@@ -8,8 +8,7 @@ import './styles/App.scss';
 
 const App = () => {
     const [todos, setTodos] = useState([
-        { id: 1, text: 'First Task', completed: false },
-        { id: 2, text: 'Second Task', completed: true },
+
     ]);
 
     const toggleTodo = (id) => {
